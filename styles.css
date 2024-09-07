@@ -1,0 +1,383 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #333;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    max-width: 1500px;
+    padding: 0 50px;
+}
+
+.navbar-logo {
+    color: #fff;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar-item {
+    height: 80px;
+}
+
+.navbar-links {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.navbar-links:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    height: 40px;
+    justify-content: space-around;
+}
+
+.bar {
+    height: 4px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        background-color: #333;
+    }
+
+    .navbar-menu.active {
+        background-color: #333;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-item {
+        width: 100%;
+    }
+
+    .navbar-links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .navbar-links:hover {
+        background-color: #555;
+        border-radius: 0;
+    }
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.faculty-card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.faculty-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    width: 100%;
+    max-width: 250px; /* Same width as team cards */
+}
+
+.faculty-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: opacity 0.3s;
+}
+
+.name, .position {
+    margin: 0;
+    transition: opacity 0.3s;
+}
+
+.quote {
+    display: none;
+    margin: 0;
+    font-style: italic;
+    transition: opacity 0.3s;
+}
+
+.team-card:hover .profile-pic,
+.team-card:hover .name,
+.team-card:hover .position,
+.faculty-card:hover .profile-pic,
+.faculty-card:hover .name,
+.faculty-card:hover .position {
+    opacity: 0;
+}
+
+.team-card:hover .quote,
+.faculty-card:hover .quote {
+    display: block;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    width: 100%;
+    max-width: 250px; /* Ensure team cards have the same max width */
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin: 40px 0 20px;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.testimonials-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px; /* Adjust width as needed */
+    padding: 20px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin: 0;
+}
+
+.testimonial-author {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+.links-to-pages {
+    max-width: 50%;
+}
+
+.links-to-pages h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.link-pages {
+    list-style: none;
+    padding: 0;
+}
+
+.link-pages li {
+    margin: 10px 0;
+}
+
+.link-pages a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.link-pages a:hover {
+    color: lightgray;
+}
+
+/* Styling for the social media section */
+.social-media {
+    max-width: 40%;
+    text-align: center;
+}
+
+.social-media h4 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: lightgray;
+}
+
+
+
+.Resources {
+    max-width: 50%;
+}
+
+.Resources h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.Resource-links {
+    list-style: none;
+    padding: 0;
+}
+
+.Resource-links li {
+    margin: 10px 0;
+}
+
+.Resource-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.Resource-links a:hover {
+    color: lightgray;
+}
+
